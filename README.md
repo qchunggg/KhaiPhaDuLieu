@@ -1,6 +1,7 @@
 # Phân loại ảnh Cat - Dog - Fox
 
 Dự án phân loại ảnh sử dụng Deep Learning với EfficientNetB0.
+Dataset: https://www.kaggle.com/datasets/snmahsa/animal-image-dataset-cats-dogs-and-foxes
 
 ## Cấu trúc thư mục
 

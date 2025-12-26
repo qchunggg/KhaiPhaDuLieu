@@ -3,11 +3,11 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 
-IMG_SIZE = 224  # Kích thước chuẩn CNN
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATASET_DIR = os.path.join(BASE_DIR, "Dataset")
-
-CLASS_NAMES = ["cat", "dog", "fox"]
+from config import (
+    DATASET_DIR, OUTPUT_DIR, 
+    X_IMAGES_PATH, Y_LABELS_PATH,
+    IMG_SIZE, CLASS_NAMES
+)
 
 def preprocess_images(dataset_dir, class_names, img_size):
     images = []
@@ -55,11 +55,10 @@ if __name__ == "__main__":
     print("Shape ảnh:", X_images.shape)
     print("Shape nhãn:", y_labels.shape)
     print("Pixel min/max:", X_images.min(), X_images.max())
-
-    OUTPUT_DIR = os.path.join(BASE_DIR, "Output")
+    # Tạo thư mục Output nếu chưa có
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    np.save(os.path.join(OUTPUT_DIR, "X_images.npy"), X_images)
-    np.save(os.path.join(OUTPUT_DIR, "y_labels.npy"), y_labels)
+    np.save(X_IMAGES_PATH, X_images)
+    np.save(Y_LABELS_PATH, y_labels)
 
     print("\nĐã lưu dữ liệu tiền xử lý vào thư mục:", OUTPUT_DIR)

@@ -29,5 +29,3 @@ print(f"Số lượng mẫu: {len(cluster_labels)}")
 output_path = os.path.join(OUTPUT_DIR, "hierarchical_labels.npy")
 np.save(output_path, cluster_labels)
 print(f"\nĐã lưu kết quả phân cụm vào: {output_path}")
-
-abc

@@ -7,15 +7,23 @@ Dataset: https://www.kaggle.com/datasets/snmahsa/animal-image-dataset-cats-dogs-
 
 ```
 BTL/
-├── Dataset/          # Chứa dữ liệu ảnh gốc (cần tải về)
+├── Dataset/              # Chứa dữ liệu ảnh gốc (cần tải về)
 │   ├── cat/
 │   ├── dog/
 │   └── fox/
-├── Output/           # Kết quả xử lý (tự động tạo)
+├── Output/               # Kết quả xử lý (tự động tạo)
 │   ├── X_images.npy
 │   ├── y_labels.npy
-│   └── features.npy
-├── Source/           # Source code
+│   ├── features.npy
+│   ├── kmeans_labels.npy
+│   └── hierarchical_labels.npy
+├── Source/               # Source code
+│   ├── Clustering/
+│   │   ├── clustering_kmeans.py
+│   │   └── clustering_hierarchical.py
+│   ├── Evaluate/
+│   │   ├── evaluate_kmeans.py
+│   │   └── evaluate_hierarchical.py
 │   ├── config.py
 │   ├── preprocess.py
 │   ├── extract_features.py
@@ -61,8 +69,14 @@ python extract_features.py
 **Bước 3**: Chạy phân cụm
 
 ```bash
-python clustering_kmeans.py
-python clustering_hierarchical.py
+python Clustering/clustering_kmeans.py
+python Clustering/clustering_hierarchical.py
+```
+
+**Bước 4**: Đánh giá kết quả
+
+```bash
+python Evaluate/evaluate_hierarchical.py
 ```
 
 ## Quy tắc đặt tên file
@@ -70,3 +84,4 @@ python clustering_hierarchical.py
 | Loại file | Quy tắc                           | Ví dụ                                                |
 | --------- | --------------------------------- | ---------------------------------------------------- |
 | Phân cụm  | `clustering_<tên phương pháp>.py` | `clustering_kmeans.py`, `clustering_hierarchical.py` |
+| Đánh giá  | `evaluate_<tên phương pháp>.py`   | `evaluate_hierarchical.py`, `evaluate_kmeans.py`     |

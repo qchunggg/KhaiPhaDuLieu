@@ -13,16 +13,16 @@ def preprocess_images(dataset_dir, class_names, img_size):
     images = []
     labels = []
 
-    print("Dataset path:", dataset_dir)
+    print("Đường dẫn Dataset:", dataset_dir)
 
     for label_id, class_name in enumerate(class_names):
         class_dir = os.path.join(dataset_dir, class_name)
 
         if not os.path.exists(class_dir):
-            print(f"[WARNING] Không tìm thấy thư mục: {class_dir}")
+            print(f"Không tìm thấy thư mục: {class_dir}")
             continue
 
-        for file_name in tqdm(os.listdir(class_dir), desc=f"Processing {class_name}"):
+        for file_name in tqdm(os.listdir(class_dir), desc=f"Đang xử lý {class_name}"):
             file_path = os.path.join(class_dir, file_name)
 
             img = cv2.imread(file_path)
@@ -50,12 +50,12 @@ if __name__ == "__main__":
         IMG_SIZE
     )
 
-    print("\n====== KẾT QUẢ ======")
+    print("\nKẾT QUẢ:")
     print("Số lượng ảnh:", X_images.shape[0])
-    print("Shape ảnh:", X_images.shape)
-    print("Shape nhãn:", y_labels.shape)
-    print("Pixel min/max:", X_images.min(), X_images.max())
-    # Tạo thư mục Output nếu chưa có
+    print("Kích thước ảnh:", X_images.shape)
+    print("Kích thước nhãn:", y_labels.shape)
+    print("Giá trị pixel min/max:", X_images.min(), X_images.max())
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     np.save(X_IMAGES_PATH, X_images)

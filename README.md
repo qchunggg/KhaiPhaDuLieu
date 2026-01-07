@@ -57,3 +57,16 @@ python extract_features.py
 ```
 
 → Tạo `features.npy` trong thư mục `Output/`
+
+**Bước 3**: Chạy phân cụm
+
+```bash
+python clustering_kmeans.py
+python clustering_hierarchical.py
+```
+
+## Quy tắc đặt tên file
+
+| Loại file | Quy tắc                           | Ví dụ                                                |
+| --------- | --------------------------------- | ---------------------------------------------------- |
+| Phân cụm  | `clustering_<tên phương pháp>.py` | `clustering_kmeans.py`, `clustering_hierarchical.py` |

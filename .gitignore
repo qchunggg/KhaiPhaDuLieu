@@ -1,7 +1,0 @@
-# Dataset & generated outputs
-Dataset/
-Output/
-
-# Python cache
-__pycache__/
-*.pyc

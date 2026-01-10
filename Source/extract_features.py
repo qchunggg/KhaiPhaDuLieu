@@ -12,6 +12,7 @@ print(f"Kích thước ảnh: {X_images.shape}")
 assert X_images.shape[1:3] == (IMG_SIZE, IMG_SIZE), \
     f"Kích thước ảnh không khớp! Mong đợi {IMG_SIZE}x{IMG_SIZE}, nhận được {X_images.shape[1:3]}"
 print(f"Giá trị pixel: [{X_images.min():.2f}, {X_images.max():.2f}]")
+
 print("Đang tải mô hình EfficientNetB0...")
 model = EfficientNetB0(
     weights="imagenet",

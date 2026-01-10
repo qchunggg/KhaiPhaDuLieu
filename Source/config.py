@@ -1,7 +1,7 @@
 """
 File cấu hình chung cho project.
 Đường dẫn được tính tự động dựa trên vị trí file này.
-Người dùng KHÔNG cần sửa gì khi clone project về máy khác.
+KHÔNG cần sửa gì khi clone project về máy.
 """
 
 import os
@@ -21,7 +21,7 @@ Y_LABELS_PATH = os.path.join(OUTPUT_DIR, "y_labels.npy")
 FEATURES_PATH = os.path.join(OUTPUT_DIR, "features.npy")
 
 # Cấu hình tiền xử lý ảnh
-IMG_SIZE = 224  # Kích thước chuẩn cho CNN
+IMG_SIZE = 224
 
 # Danh sách các lớp
 CLASS_NAMES = ["cat", "dog", "fox"]

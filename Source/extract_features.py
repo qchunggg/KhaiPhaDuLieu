@@ -35,5 +35,11 @@ if nan_count > 0 or inf_count > 0:
 else:
     print("Không có NaN/Inf trong đặc trưng")
 
+print("\nMẪU DỮ LIỆU:")
+for i in range(min(5, len(features))):
+    feat = features[i]
+    values = ", ".join([f"{v:.2f}" for v in feat[:5]])
+    print(f"  Ảnh {i}: shape={feat.shape}, giá trị=[{values}, ...] ({len(feat)} giá trị)")
+
 np.save(FEATURES_PATH, features)
 print(f"\nĐã lưu đặc trưng vào: {FEATURES_PATH}")

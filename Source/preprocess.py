@@ -56,6 +56,13 @@ if __name__ == "__main__":
     print("Kích thước nhãn:", y_labels.shape)
     print("Giá trị pixel min/max:", X_images.min(), X_images.max())
 
+    print("\nMẪU DỮ LIỆU:")
+    for i in range(min(5, len(X_images))):
+        img = X_images[i]
+        flat = img.flatten()[:5]
+        values = ", ".join([f"{v:.2f}" for v in flat])
+        print(f"  Ảnh {i}: shape={img.shape}, label={y_labels[i]}, pixel=[{values}, ...] ({img.size} giá trị)")
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     np.save(X_IMAGES_PATH, X_images)
